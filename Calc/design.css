@@ -1,0 +1,54 @@
+body {
+    background-image: url("https://image.freepik.com/free-photo/abstract-background-metallic-blue-green-wires_74867-58.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.tasten {
+    width: 90%;
+    margin: 200px auto 0;
+    text-align: center;
+}
+
+.buttons {
+    background-color: rgba(255,255,255,0.5);
+    border-color: aqua;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 40px;
+    color: black;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 30px;
+    transition: transform 0.3s;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    animation: start 0.7s;
+    
+}
+
+.buttons:focus {
+    outline: 0;
+}
+
+.buttons:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 30px 3px aqua;
+}
+
+#output {
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    margin: 0 700 40;
+    padding: 20
+}
+
+@keyframes start {
+    0%  {
+        transform: scale(1.3);
+    } 100% {
+        transform: scale(1);
+    }
+}
