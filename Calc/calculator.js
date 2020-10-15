@@ -14,14 +14,15 @@ var output = document.getElementById("output");
 var divide = document.getElementById("divide");
 var zero = document.getElementById("0");
 var multi = document.getElementById("multi");
+var clean = document.getElementById("clean");
 
 now = "";
 var charse = ["1","2","3","4","5","6","7","8","9","+","-","/","*"];
+
 function interpretInp(num) {
-    if(now.length <= 15) {
-        now += num;
-        output.innerHTML = now;
-    }
+    now += num;
+    output.innerHTML = now.toString();
+    
     
 }
 
@@ -31,7 +32,7 @@ function evaluate() {
         output.innerHTML = out;
         now = out.toString();
     } catch(err) {
-        alert("Invailed");
+        document.getElementById("output").innerHTML = "Invalid";
     }
     
 }
@@ -50,12 +51,15 @@ minus.onclick = function() {interpretInp("-")};
 divide.onclick = function() {interpretInp("/")};
 multi.onclick = function() {interpretInp("*")};
 zero.onclick = function() {interpretInp("0")};
+clean.onclick= function() {
+    now = "";
+    output.innerHTML=now;
+}
 eq.onclick = evaluate;
 
 document.addEventListener("keydown",function(event) {
-    console.log(event.key);
      if(event.key == "Backspace") {
-         now = "";
+         now = now.substring(0,now.length-1);
          output.innerHTML = now;
      } else if(event.key == "Enter") {
          evaluate();

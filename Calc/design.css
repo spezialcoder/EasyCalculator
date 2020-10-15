@@ -27,6 +27,8 @@ body {
     margin-bottom: 20px;
     animation: start 0.7s;
     user-select: none;
+    display: inline-block;
+    width: 5%;
     
 }
 
@@ -40,14 +42,23 @@ body {
     color: red;
 }
 
+.buttons:active  {
+    transform: scale(1.2);
+    transition-duration: 0.03s;
+}
+
 #output {
+    overflow-wrap: break-word;
     background-color: rgba(255,255,255,0.6);
     border-style: solid;
     border-color: aqua;
     border-radius: 20px;
-    margin: 0 700 40;
+    margin: 0 auto 40;
     padding: 20;
     box-shadow: 0px 0px 20px 20px aqua;
+    width: 360px;
+    min-height: 37px;
+    
 }
 
 @keyframes start {
